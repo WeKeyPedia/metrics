@@ -13,7 +13,7 @@ $ source e/py/bin/activate
 (py)$ python server.py
 ```
 
-### Aditionnal parameters
+### Additionnal parameters
 
 ```
 (py)$ PORT=5100 python server.py
