@@ -1,0 +1,42 @@
+.metric {
+
+  h2 {
+    display: inline-block;
+  }
+
+  .info {
+    display: inline-block;
+  }
+
+  &.default {
+    color: black;
+  }
+
+  .action {
+    .btn { display: block; }
+  }
+}
+
+// sankey
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 10px;
+  font-family: Tahoma, sans serif;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}

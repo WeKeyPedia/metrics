@@ -1,0 +1,8 @@
+.metric {
+  background-color: red; }
+  .metric h2 {
+    display: inline-block; }
+  .metric .info {
+    display: inline-block; }
+  .metric.default {
+    color: black; }
