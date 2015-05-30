@@ -5,6 +5,7 @@ coffeeFiles = [
   "page.coffee",
   "metric.pageviews.coffee"
   "metric.clickstream.coffee"
+  "metric.revisions.coffee"
   "metric.default.coffee"
 ]
 

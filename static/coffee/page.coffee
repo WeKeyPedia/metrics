@@ -8,6 +8,7 @@ class Page extends Backbone.Model
     @available_views =
       pageviews: MetricPageviews
       clickstream: MetricClickstream
+      revisions: MetricRevisions
 
     @views =
       "summary": new PageViewSummary({ model: this, el: "#summary" }).render()
@@ -86,6 +87,6 @@ class PageViewSummary extends Backbone.View
     """
 
     t = Handlebars.compile html
-    @$el.find('#info').html t info
+    # @$el.find('#info').html t info
 
     return this

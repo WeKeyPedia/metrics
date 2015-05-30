@@ -10,18 +10,18 @@ class MetricPageviews extends Backbone.View
   template: """
   <h2>Pageviews</h2>
 
-  <div class="info">from <span class="from"></span> to <span class="to"></span></div>
+  <div class="info">
+    <span class="data btn btn-default btn-xs"><i class="fa fa-eye"></i> <span class="number" /> views</span>
+    from <span class="data btn btn-default btn-xs"><i class="fa fa-calendar-o"></i> <span class="from" /></span>
+    to <span class="data btn btn-default btn-xs"><i class="fa fa-calendar-o"></i> <span class="to" /></span>
+  </div>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="action">
-        <a class="json btn btn-default" role="button">json</a>
-      </div>
-    </div>
+  <div class="action pull-right">
+    <a class="json btn btn-default" role="button"><i class="fa fa-table"></i> 
+ json</a>
+  </div>
 
-    <div class="col-md-10">
-      <div class='preview'/>
-    </div>
+  <div class='preview'/>
   """
 
   render: ()->
@@ -60,6 +60,7 @@ class MetricPageviews extends Backbone.View
 
     @$(".info .from").html _(days).keys()[0]
     @$(".info .to").html _(days).keys()[ _(days).size()-1 ]
+    @$(".info .number").html d3.sum _(days).values()
 
     weeks = _(days).groupBy (v, k)-> d3.time.format("%Y-%U")(f.parse(k))
 

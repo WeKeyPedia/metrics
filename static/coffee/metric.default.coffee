@@ -10,18 +10,12 @@ class MetricDefault extends Backbone.View
   template: """
   <h2></h2>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="action">
-        <a class="json btn btn-default">json</a>
-      </div>
-    </div>
-
-    <div class="col-md-10">
-      <div class='preview'/>
-    </div>
-
+  <div class="action pull-right">
+    <a class="json btn btn-default"><i class="fa fa-table"></i>
+  json</a>
   </div>
+
+  <div class='preview'/>
   """
 
   render: ()->

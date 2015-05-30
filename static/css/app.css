@@ -1,14 +1,16 @@
-.metric h2 {
-  display: inline-block; }
-
-.metric .info {
-  display: inline-block; }
-
-.metric.default {
-  color: black; }
-
-.metric .action .btn {
-  display: block; }
+.metric {
+  margin-bottom: 20px; }
+  .metric h2 {
+    display: inline-block; }
+  .metric .info {
+    display: inline-block; }
+  .metric.default {
+    color: black; }
+  .metric .action {
+    margin-top: 20px;
+    display: inline-block; }
+    .metric .action .btn {
+      display: block; }
 
 .node rect {
   cursor: move;

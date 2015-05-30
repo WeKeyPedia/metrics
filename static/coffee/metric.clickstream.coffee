@@ -10,16 +10,22 @@ class MetricClickstream extends Backbone.View
   template: """
   <h2>Clickstream</h2>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="action">
-        <a class="json btn btn-default" role="button">json</a>
-      </div>
-    </div>
+  <div class="info">
+    <span class="data btn btn-default btn-xs"><i class="fa fa-circle-thin"></i><i class="fa fa-long-arrow-right" style="margin-left:-8px;"></i>
+    <span class="clickstream-in" /> inbound links</span>
+    for <span class="data btn btn-default btn-xs"><i class="fa fa-eye"></i> <span class="clickstream-in-views" /> views</span>
 
-    <div class="col-md-10">
-      <div class='preview'/>
-    </div>
+    <span class="data btn btn-default btn-xs"><i class="fa fa-circle-thin"></i><i class="fa fa-long-arrow-left" style="margin-left:-8px;"></i>
+    <span class="clickstream-out" /> outbound links</span>
+    for <span class="data btn btn-default btn-xs"><i class="fa fa-eye"></i> <span class="clickstream-out-views" /> views</span>
+  </div>
+
+  <div class="action pull-right">
+    <a class="json btn btn-default" role="button"><i class="fa fa-table"></i>
+ json</a>
+  </div>
+
+  <div class='preview'/>
   """
 
   render: ()->
@@ -33,6 +39,11 @@ class MetricClickstream extends Backbone.View
 
   update: ()->
     data = @model.get @attributes['metric']
+
+    @$(".clickstream-in").html _(data["in"]).size()
+    @$(".clickstream-out").html _(data["out"]).size()
+    @$(".clickstream-in-views").html d3.sum _(data["in"]).values()
+    @$(".clickstream-out-views").html d3.sum _(data["out"]).values()
 
     center = @model.get "title"
 
